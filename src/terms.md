@@ -6,7 +6,7 @@ title: 'Arctic Paws'
 
 ## Accord de Toilettage d'Animaux – Termes et Conditions
 
-Chaque client doit lire et signer cet accord de toilettage avant toute prestation de toilettage.
+Chaque client doit lire et accepter cet accord de toilettage avant toute prestation de toilettage.
 
 1. **Collecte de votre animal**
 
