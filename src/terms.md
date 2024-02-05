@@ -1,3 +1,9 @@
+---
+layout: 'base.njk'
+permalink: /
+title: 'Arctic Paws'
+---
+
 # Terms and Conditions
 
 Welcome to Our Website! By accessing our site, you are agreeing to the following terms and conditions. Please read them carefully.

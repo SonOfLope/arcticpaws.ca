@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
         }
         const htmlContent = md.render(data);
         res.send(`
-            <!DOCTYPE html>z
+            <!DOCTYPE html>
             <html>
             <head>
                 <link rel="stylesheet" type="text/css" href="style.css">
