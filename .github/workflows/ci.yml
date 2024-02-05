@@ -1,0 +1,35 @@
+name: Markdown to HTML CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Convert Markdown to HTML
+      uses: docker://pandoc/core:2.14
+      with:
+        args: --from markdown --to html --output terms.html terms.md
+
+    - name: Add CSS link to HTML
+      run: |
+        sed -i '1s;^;<link rel="stylesheet" type="text/css" href="style.css">\n;' terms.html
+
+    - name: Commit files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add terms.html
+        git commit -m "Generate HTML from Markdown" -a || echo "No changes to commit"
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
