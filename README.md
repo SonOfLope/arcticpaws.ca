@@ -1,1 +1,0 @@
-# arcticpaws.ca
