@@ -2,7 +2,7 @@
   "name": "arcticpaws.ca",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "homepage": "https://arcticpaws.ca",
   "scripts": {
     "watch:sass": "sass src/static/scss:public/static/css --watch",
     "build:sass": "sass src/static/scss:public/static/css",
