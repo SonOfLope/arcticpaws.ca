@@ -1,35 +1,28 @@
-name: Markdown to HTML CI
-
+---
+name: Build and Deploy
 on:
   push:
     branches:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Convert Markdown to HTML
-      uses: docker://pandoc/core:2.14
-      with:
-        args: --from markdown --to html --output terms.html terms.md
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
 
-    - name: Add CSS link to HTML
-      run: |
-        sed -i '1s;^;<link rel="stylesheet" type="text/css" href="style.css">\n;' terms.html
+      - name: Install and Build
+        run: |
+          npm install
+          npm run build
 
-    - name: Commit files
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add terms.html
-        git commit -m "Generate HTML from Markdown" -a || echo "No changes to commit"
-
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: main
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
