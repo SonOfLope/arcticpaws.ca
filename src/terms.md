@@ -4,7 +4,7 @@ permalink: /
 title: 'Arctic Paws'
 ---
 
-## Accord de Toilettage d'Animaux – Termes et Conditions
+## Accord de Toilettage d'Animaux - Termes et Conditions
 
 Chaque client doit lire et accepter cet accord de toilettage avant toute prestation de toilettage.
 
