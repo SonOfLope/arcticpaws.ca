@@ -34,12 +34,11 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter('buildUrl', (path, addTimestamp = false) => {
     const timestampParam = addTimestamp ? `?v=${buildTimestamp}` : '';
-    // Ensure the path starts with a '/' and remove any './' prefix
-    const normalizedPath = path.startsWith('./') ? path.substring(1) : path;
-    const websiteUrl = process.env.ELEVENTY_ENV === 'production' ? `https://arcticpaws.ca${normalizedPath}` : normalizedPath;
-  
+    const websiteUrl = process.env.ELEVENTY_ENV === 'production' ? `https://maarten.be${path}` : path;
+
     return `${websiteUrl}${timestampParam}`;
   });
+
 
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
 
