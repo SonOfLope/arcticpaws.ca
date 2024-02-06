@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "sass src/static/scss:public/static/css --watch",
-    "build:sass": "sass /static/scss:public/static/css",
-    "build:sass:prod": "sass src/static/scss:public/static/css --style compressed",
+    "watch:sass": "sass src/scss:public/static/css --watch",
+    "build:sass": "sass /scss:public/static/css",
+    "build:sass:prod": "sass src/scss:public/static/css --style compressed",
     "watch:eleventy": "eleventy --serve",
     "build:eleventy": "ELEVENTY_ENV=development eleventy",
     "build:eleventy:prod": "ELEVENTY_ENV=production eleventy",
