@@ -34,7 +34,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter('buildUrl', (path, addTimestamp = false) => {
     const timestampParam = addTimestamp ? `?v=${buildTimestamp}` : '';
-    const websiteUrl = process.env.ELEVENTY_ENV === 'production' ? `https://arcticpaws${path}` : path;
+    const websiteUrl = process.env.ELEVENTY_ENV === 'production' ? `https://arcticpaws.ca${path}` : path;
 
     return `${websiteUrl}${timestampParam}`;
   });
