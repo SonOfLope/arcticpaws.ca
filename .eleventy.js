@@ -7,6 +7,7 @@ const markdownItAnchor = require('markdown-it-anchor');
 module.exports = function (eleventyConfig) {
   const markdownItOptions = {
     html: true,
+    renderPermalink,
   };
 
   const markdownItAnchorOptions = {

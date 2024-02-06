@@ -1,17 +1,16 @@
----
-name: Build and Deploy
+name: Build & Deploy
+
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: ['14.17.6']
+        node-version: [ '14.17.6' ]
 
     steps:
       - uses: actions/checkout@v3
@@ -23,12 +22,12 @@ jobs:
           cache: 'npm'
 
       - name: Install packages
-        run: npm install
+        run: npm ci
 
       - name: Run npm build
         run: npm run build:prod
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
