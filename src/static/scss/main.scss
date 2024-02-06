@@ -1,6 +1,2 @@
-h2 {
-    color: rgb(56, 204, 237);
-    background-color: darkblue;
-    text-align: center;
-    padding: 10px;
-}
+@import 'base/_vars';
+@import 'components/_editor-txt';
